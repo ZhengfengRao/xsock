@@ -535,11 +535,11 @@ void sending()
 	/*
         szTemp = (char*)&data;
 	*/
-        szTemp = (char*)malloc(nSize + 4);
-	int* _p = (int*)szTemp;
+        szTemp = (char*)malloc(nSize + sizeof(uint32_t));
+	uint32_t* _p = (uint32_t*)szTemp;
 	*_p = nSize;
-	memcpy((void*)(szTemp + 4), (void*)&data, nSize);
-	nSize += 4;
+	memcpy((void*)((char*)(szTemp + sizeof(uint32_t))), (void*)&data, nSize);
+	nSize += sizeof(uint32_t);
     }
 
 
