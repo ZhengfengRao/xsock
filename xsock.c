@@ -326,6 +326,7 @@ int socket4send()
 	setTTL(sock, 65);
     }
 
+	/*
     struct sockaddr_in Addr;
     Addr.sin_family = AF_INET;
     Addr.sin_port = htons(203901);
@@ -336,7 +337,7 @@ int socket4send()
         printf("[bind]error. %s\n", strerror(errno));
         return -1;
     }
-
+	*/
     return sock;
 }
 
